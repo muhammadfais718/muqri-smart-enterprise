@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muqri Smart Enterprise | Peneraju Unggas Premium</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+        :root {
+            --gold: #d4af37;
+            --gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+            --dark: #0b0c10;
+            --card-bg: #1f2833;
+            --light: #f5f6fa;
+            --text-gray: #c5a880;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Space Grotesk', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Navigasi Bar Premium */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: rgba(11, 12, 16, 0.95);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background-image: url('GMBR/gempak_bg_texture.png');
+            background-repeat: repeat-x;
+            background-size: contain;
+            background-position: top center;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-logo {
+            height: 55px;
+            width: 55px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .nav-brand {
+            font-family: 'Cinzel', serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #c5c6c7;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: 0.3s;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Banner Ultra Gempak - DIKEMASKINI SUPAYA TIDAK KOSONG */
+        header {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            /* Gabungan Garisan Grid Cyber Gold & Gradient Gelap */
+            background: 
+                linear-gradient(rgba(11, 12, 16, 0.8), rgba(11, 12, 16, 0.95)),
+                linear-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px) 0 0 / 40px 40px,
+                linear-gradient(90deg, rgba(212, 175, 55, 0.05) 1px, transparent 1px) 0 0 / 40px 40px,
+                radial-gradient(circle at center, rgba(31, 40, 51, 0.5) 0%, rgba(11, 12, 16, 1) 100%),
+                url('GMBR/gempak_bg_texture.png');
+            background-repeat: repeat;
+            background-position: center;
+        }
+
+        /* Container Khas untuk memberikan Aura Pencahayaan di Belakang Logo */
+        .logo-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        /* Efek Aura Keemasan di belakang logo */
+        .logo-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(212, 175, 55, 0) 70%);
+            border-radius: 50%;
+            z-index: 1;
+            pointer-events: none;
+            animation: pulseAura 4s infinite alternate ease-in-out;
+        }
+
+        .hero-logo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--gold);
+            position: relative;
+            z-index: 2; /* Berada di atas aura */
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.4), inset 0 0 20px rgba(212, 175, 55, 0.2);
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); transform: scale(1); }
+            100% { box-shadow: 0 0 50px rgba(212, 175, 55, 0.6); transform: scale(1.03); }
+        }
+
+        @keyframes pulseAura {
+            0% { width: 240px; height: 240px; opacity: 0.7; }
+            100% { width: 340px; height: 340px; opacity: 1; }
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.8rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            color: #c5c6c7;
+            max-width: 750px;
+            font-weight: 300;
+            line-height: 1.6;
+            letter-spacing: 1px;
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-hero {
+            background: var(--gold-gradient);
+            color: var(--dark);
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+            transition: 0.3s;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Seksyen Statistik (Gempak Impak) */
+        .stats-section {
+            background: #11141a;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .stats-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #9aa0a6;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Seksyen Kelebihan / Features */
+        .features-section {
+            padding: 80px 20px 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-box {
+            background: rgba(31, 40, 51, 0.4);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 35px 25px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .feature-box:hover {
+            border-color: var(--gold);
+            background: rgba(31, 40, 51, 0.6);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .feature-box h3 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 10px;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+        }
+
+        .feature-box p {
+            color: #9aa0a6;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Bahagian Tajuk Seksyen */
+        .section-title {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: #fff;
+            margin: 60px 0 20px 0;
+            letter-spacing: 2px;
+        }
+
+        .section-title span {
+            color: var(--gold);
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #9aa0a6;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+
+        /* Koleksi Kad Produk */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-12px);
+            border-color: var(--gold);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.1) rotate(1deg);
+        }
+
+        .tag-harga {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(11, 12, 16, 0.9);
+            color: var(--gold);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: 1px solid var(--gold);
+            backdrop-filter: blur(5px);
+        }
+
+        .card-content {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #fff;
+        }
+
+        .card-content p {
+            color: #9aa0a6;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .btn-order {
+            background: var(--gold-gradient);
+            color: var(--dark);
+            text-decoration: none;
+            text-align: center;
+            padding: 14px;
+            border-radius: 14px;
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s ease;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-order:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+            filter: brightness(1.1);
+        }
+
+        /* Modal Box */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 24px;
+            border: 2px solid var(--gold);
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 30px rgba(212,175,55,0.2);
+        }
+
+        .modal h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .modal input {
+            width: 100%;
+            padding: 12px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border: 1px solid #c5c6c7;
+            background: var(--dark);
+            color: #fff;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .modal-btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-cancel {
+            background: #333;
+            color: #fff;
+            padding: 12px;
+            border-radius: 14px;
+            flex: 1;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #050508;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        footer strong {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Responsif Skrin Mobil */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 15px; text-align: center; }
+            .nav-links { gap: 15px; }
+            header h1 { font-size: 2.6rem; }
+            header p { font-size: 1.1rem; }
+            .hero-logo { width: 160px; height: 160px; }
+            .logo-wrapper::before { width: 200px; height: 200px; }
+            .section-title { font-size: 2rem; }
+            .stats-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; justify-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav Bar -->
+    <nav>
+        <div class="nav-left">
+            <img src="GMBR/IMG1.jpg" alt="Muqri Smart Enterprise Logo Mini" class="nav-logo">
+            <span class="nav-brand">Muqri Smart</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">Utama</a>
+            <a href="#kelebihan">Kelebihan</a>
+            <a href="#koleksi">Koleksi Elite</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Bahagian Latar Belakang Logo Telah Dipertingkatkan) -->
+    <header>
+        <div class="logo-wrapper">
+            <img src="GMBR/IMG1.jpg" alt="Muqri Smart Enterprise Logo Utama" class="hero-logo">
+        </div>
+        <h1>Muqri Smart Enterprise</h1>
+        <p>Mentransformasi Industri Penternakan Unggas Dengan Baka Premium, Sihat & Dipercayai Terus Dari Ladang Pintar Kami.</p>
+        <a href="#koleksi" class="cta-hero">Lihat Baka Elite</a>
+    </header>
+
+   
+
+    <!-- Kenapa Pilih Kami -->
+    <section class="features-section" id="kelebihan">
+        <h2 class="section-title">Mengapa Ladang Kami <span>Berbeza</span></h2>
+        <p class="section-subtitle">Sistem pengurusan ternakan moden demi memastikan kualiti baka unggas terbaik sampai ke tangan anda.</p>
+        
+        <div class="features-grid">
+            <div class="feature-box">
+                <span class="feature-icon">🛡️</span>
+                <h3>Jaminan Kesihatan</h3>
+                <p>Setiap unggas melalui tapisan kesihatan yang ketat dan program vaksinasi awal yang lengkap sebelum dihantar.</p>
+            </div>
+            <div class="feature-box">
+                <span class="feature-icon">🌿</span>
+                <h3>Makanan Premium</h3>
+                <p>Formulasi makanan berasaskan bahan organik bermutu tinggi tanpa campuran hormon tiruan berbahaya.</p>
+            </div>
+            <div class="feature-box">
+                <span class="feature-icon">🚀</span>
+                <h3>Penghantaran Selamat</h3>
+                <p>Sistem logistik khas yang mengekalkan keselesaan unggas bagi mengurangkan kadar stres semasa perjalanan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Koleksi Elite -->
+    <section id="koleksi">
+        <h2 class="section-title">Koleksi <span>ELITE</span></h2>
+        <p class="section-subtitle">Pilih variasi baka unggas premium mengikut kesesuaian pasaran dan ekosistem perniagaan anda.</p>
+
+        <div class="container">
+            <div class="grid">
+                
+                <div class="card">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=500&q=80" alt="Ayam Kampung Super">
+                        <span class="tag-harga">Gred A Premium</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Ayam Kampung</h3>
+                        <p>Baka tulen, pembesaran organik tanpa sebarang hormon tambahan. Daging padat, manis, dan berkualiti tinggi untuk sajian premium.</p>
+                        <button class="btn-order" onclick="bukaModal('Ayam Kampung Super')">
+                            👑 Tempah Sekarang
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="image-container">
+                        <img src="GMBR/IMG3.jpg" alt="Itik Muscovy & Khaki">
+                        <span class="tag-harga">Baka Pilihan</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Itik</h3>
+                        <p>Sangat produktif untuk pengeluaran telur gred tinggi atau pasaran daging itik panggang restoran mewah. Tahan lasak terhadap penyakit.</p>
+                        <button class="btn-order" onclick="bukaModal('Itik Daging & Penelur')">
+                            👑 Tempah Sekarang
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="image-container">
+                        <img src="GMBR/IMG2.webp" alt="Angsa Pengawal">
+                        <span class="tag-harga">Baka Terhad</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Angsa Putih</h3>
+                        <p>Baka fizikal besar, vokal yang kuat, sangat sesuai untuk kawalan keselamatan ekosistem kebun serta hiasan landskap eksklusif anda.</p>
+                        <button class="btn-order" onclick="bukaModal('Angsa Putih Premium')">
+                            👑 Tempah Sekarang
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="image-container">
+                        <img src="GMBR/IMG4.jpg" alt="Anak Ayam Umur Sehari">
+                        <span class="tag-harga">Kadar Hidup Tinggi</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Anak Ayam</h3>
+                        <p>Anak ayam berumur sehari (Day Old Chick) yang telah melalui tapisan kualiti ketat dan vaksinasi awal lengkap. Sedia untuk penternakan skala besar.</p>
+                        <button class="btn-order" onclick="bukaModal('Anak Ayam DOC')">
+                            👑 Tempah Sekarang
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Box -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <h3>Berapa Ekor Bos?</h3>
+            <p>Masukkan kuantiti anggaran untuk <strong id="namaProdukModal" style="color:var(--gold)"></strong>:</p>
+            <input type="number" id="kuantitiInput" value="10" min="1">
+            <div class="modal-btns">
+                <button class="btn-cancel" onclick="tutupModal()">Batal</button>
+                <button class="btn-order" onclick="hantarKeWhatsApp()">Hantar Mesej 🚀</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <strong>Muqri Smart Enterprise</strong>. Hak Cipta Terpelihara. Solusi Ternakan Elit Moden.</p>
+    </footer>
+
+    <script>
+        let produkDipilih = "";
+
+        function bukaModal(namaProduk) {
+            produkDipilih = namaProduk;
+            document.getElementById('namaProdukModal').innerText = namaProduk;
+            document.getElementById('orderModal').style.display = 'flex';
+        }
+
+        function tutupModal() {
+            document.getElementById('orderModal').style.display = 'none';
+        }
+
+        function hantarKeWhatsApp() {
+            const noPhoneOwner = "60134398400"; 
+            const kuantiti = document.getElementById('kuantitiInput').value;
+            const ayatMesej = `Salam Tuan Admin Muqri Smart Enterprise, saya melayari website rasmi tuan dan berminat untuk membuat tempahan/pertanyaan dengan lebih lanjut.\n\n` +
+                               `• *Produk:* ${produkDipilih}\n` +
+                               `• *Anggaran Kuantiti:* ${kuantiti} ekor\n\n` +
+                               `Mohon pihak tuan berikan sebut harga terkini dan status ketersediaan stok. Terima kasih!`;
+            const urlMesej = encodeURIComponent(ayatMesej);
+            const linkWhatsApp = `https://wa.me/60134398400?text=${urlMesej}`;
+            window.open(linkWhatsApp, '_blank');
+            tutupModal();
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('orderModal');
+            if (event.target == modal) {
+                tutupModal();
+            }
+        }
+    </script>
+</body>
+</html>
