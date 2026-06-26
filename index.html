@@ -10,7 +10,7 @@
         :root {
             --gold: #d4af37;
             --gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
-            --dark: #0b0c10;
+            --dark: #000000;
             --card-bg: #1f2833;
             --light: #f5f6fa;
             --text-gray: #c5a880;
@@ -36,7 +36,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 5%;
-            background: rgba(11, 12, 16, 0.95);
+            background: rgba(0, 0, 0, 0.95);
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
             position: sticky;
             top: 0;
@@ -102,7 +102,7 @@
             position: relative;
             /* Gabungan Garisan Grid Cyber Gold & Gradient Gelap */
             background: 
-                linear-gradient(rgba(11, 12, 16, 0.8), rgba(11, 12, 16, 0.95)),
+                linear-gradient(rgba(253, 254, 255, 0.8), rgba(0, 0, 0, 0.95)),
                 linear-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px) 0 0 / 40px 40px,
                 linear-gradient(90deg, rgba(212, 175, 55, 0.05) 1px, transparent 1px) 0 0 / 40px 40px,
                 radial-gradient(circle at center, rgba(31, 40, 51, 0.5) 0%, rgba(11, 12, 16, 1) 100%),
@@ -520,7 +520,7 @@
     <nav>
         <div class="nav-left">
             <img src="GMBR/IMG1.jpg" alt="Muqri Smart Enterprise Logo Mini" class="nav-logo">
-            <span class="nav-brand">Muqri Smart</span>
+            <span class="nav-brand">Muqri Smart Enterprise</span>
         </div>
         <div class="nav-links">
             <a href="#">Utama</a>
@@ -603,20 +603,6 @@
 
                 <div class="card">
                     <div class="image-container">
-                        <img src="GMBR/IMG2.webp" alt="Angsa Pengawal">
-                        <span class="tag-harga">Baka Terhad</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>Angsa Putih</h3>
-                        <p>Baka fizikal besar, vokal yang kuat, sangat sesuai untuk kawalan keselamatan ekosistem kebun serta hiasan landskap eksklusif anda.</p>
-                        <button class="btn-order" onclick="bukaModal('Angsa Putih Premium')">
-                            👑 Tempah Sekarang
-                        </button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="image-container">
                         <img src="GMBR/IMG4.jpg" alt="Anak Ayam Umur Sehari">
                         <span class="tag-harga">Kadar Hidup Tinggi</span>
                     </div>
@@ -665,14 +651,14 @@
         }
 
         function hantarKeWhatsApp() {
-            const noPhoneOwner = "60134398400"; 
+            const noPhoneOwner = "601169868010"; 
             const kuantiti = document.getElementById('kuantitiInput').value;
             const ayatMesej = `Salam Tuan Admin Muqri Smart Enterprise, saya melayari website rasmi tuan dan berminat untuk membuat tempahan/pertanyaan dengan lebih lanjut.\n\n` +
                                `• *Produk:* ${produkDipilih}\n` +
                                `• *Anggaran Kuantiti:* ${kuantiti} ekor\n\n` +
                                `Mohon pihak tuan berikan sebut harga terkini dan status ketersediaan stok. Terima kasih!`;
             const urlMesej = encodeURIComponent(ayatMesej);
-            const linkWhatsApp = `https://wa.me/60134398400?text=${urlMesej}`;
+            const linkWhatsApp = `https://wa.me/601169868010?text=${urlMesej}`;
             window.open(linkWhatsApp, '_blank');
             tutupModal();
         }
